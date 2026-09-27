@@ -1,6 +1,12 @@
 <h1 align="center">🫏 Donkey Development Kit</h1>
 
 <p align="center">
+  <a href="https://pypi.org/project/donkey-kit/">
+    <img src="https://img.shields.io/pypi/v/donkey-kit?logo=pypi&logoColor=white&label=PyPI" alt="PyPI version">
+  </a>
+</p>
+
+<p align="center">
   <strong>Takes the donkey work out of AI development.</strong>
 </p>
 
@@ -30,12 +36,10 @@ DDK lets your AI application consume **Agent Fabric** governance from Python —
 
 ## Get started
 
-> **Alpha, pre-release** (`v0.1.0.dev1`) — not yet published to PyPI. Install from source:
+> **Alpha — published on PyPI.**
 
 ```bash
-git clone https://github.com/Donkey-Development-Kit/donkey-development-kit.git
-cd donkey-development-kit/python
-pip install -e ".[llm,langgraph]"   # base + raw client + one framework
+pip install "donkey-kit[llm,langgraph]"   # base + raw client + one framework
 ```
 
 Then head to the [SDK repo](https://github.com/Donkey-Development-Kit/donkey-development-kit) for usage and the [demos](https://github.com/Donkey-Development-Kit/donkey-development-kit-demos) to see it in action.
