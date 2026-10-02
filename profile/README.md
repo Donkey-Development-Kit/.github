@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://pypi.org/project/donkey-kit/">
-    <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fpypi.org%2Fpypi%2Fdonkey-kit%2Fjson&amp;query=%24.info.version&amp;prefix=v&amp;label=PyPI&amp;logo=pypi&amp;logoColor=white&amp;color=blue&amp;cacheSeconds=3600" alt="PyPI version">
+    <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fpypi.org%2Fpypi%2Fdonkey-kit%2Fjson&query=%24.info.version&prefix=v&label=PyPI&logo=pypi&logoColor=white&color=blue&cacheSeconds=3600" alt="PyPI version">
   </a>
 </p>
 
@@ -46,4 +46,4 @@ Then head to the [SDK repo](https://github.com/Donkey-Development-Kit/donkey-dev
 
 ---
 
-<sub>Unofficial &amp; independent — not affiliated with, endorsed by, or supported by Salesforce or MuleSoft. “Agent Fabric”, “MuleSoft”, “Anypoint”, and “Omni Gateway” are Salesforce trademarks. Licensed under Apache-2.0.</sub>
+<sub>Unofficial & independent — not affiliated with, endorsed by, or supported by Salesforce or MuleSoft. “Agent Fabric”, “MuleSoft”, “Anypoint”, and “Omni Gateway” are Salesforce trademarks. Licensed under Apache-2.0.</sub>
