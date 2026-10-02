@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://pypi.org/project/donkey-kit/">
-    <img src="https://img.shields.io/pypi/v/donkey-kit?logo=pypi&logoColor=white&label=PyPI" alt="PyPI version">
+    <img src="https://img.shields.io/pypi/v/donkey-kit?logo=pypi&logoColor=white&label=PyPI&v=0.1.1" alt="PyPI version">
   </a>
 </p>
 
