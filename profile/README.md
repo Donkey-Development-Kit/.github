@@ -49,14 +49,14 @@
 
 DDK connects your Python AI application to **MuleSoft Agent Fabric** while you keep your own framework and IDE, **without deploying or running the Mule runtime**. The gateway enforces policy; DDK makes its decisions visible and actionable in your code.
 
-With [**donkey-kit 0.2.0**](https://github.com/Donkey-Development-Kit/donkey-development-kit/releases/tag/v0.2.0), you can:
+With **donkey-kit**, you can:
 
-- **Use governed models and MCP tools**: call models through the gateway, discover governed MCP servers in Exchange, and bind their tools to native framework objects.
-- **Publish from code and CI**: scan agents and MCP servers, publish them to Exchange, and verify live tools and agent cards against what you published.
-- **Carry user identity and pause for approval**: forward on-behalf-of user tokens, gate tools with human-in-the-loop approvals, and handle the gateway's CIBA step-up decisions as typed outcomes.
-- **Serve A2A agents**: make your agent callable through the official `a2a-sdk`, with local simulated ingress and CLI tooling to expose it behind a gateway.
-- **React to typed refusals and pace usage**: catch structured governance exceptions, register refusal handlers and custom policy types, and use gateway-reported budget windows to slow down before hitting a limit.
-- **Trace and test governance**: OpenTelemetry GenAI spans, correlation IDs, cost attribution, a local gateway simulator, and a pytest conformance plugin help you observe calls and test refusal paths before production.
+- 🔗 **Use governed models and MCP tools**: call models through the gateway, discover governed MCP servers in Exchange, and bind their tools to native framework objects.
+- 📦 **Publish from code and CI**: scan agents and MCP servers, publish them to Exchange, and verify live tools and agent cards against what you published.
+- 🔐 **Carry user identity and pause for approval**: forward on-behalf-of user tokens, gate tools with human-in-the-loop approvals, and handle the gateway's CIBA step-up decisions as typed outcomes.
+- 🤝 **Serve A2A agents**: make your agent callable through the official `a2a-sdk`, with local simulated ingress and CLI tooling to expose it behind a gateway.
+- 🚦 **React to typed refusals and pace usage**: catch structured governance exceptions, register refusal handlers and custom policy types, and use gateway-reported budget windows to slow down before hitting a limit.
+- 🔭 **Trace and test governance**: OpenTelemetry GenAI spans, correlation IDs, cost attribution, a local gateway simulator, and a pytest conformance plugin help you observe calls and test refusal paths before production.
 
 **Framework support is deliberately differentiated.** LangGraph and the OpenAI Agents SDK are conformance-tested adapters. Google ADK, Strands, Microsoft Agent Framework, Anthropic, CrewAI, and LlamaIndex provide native factories and `connection_kwargs()`, with framework-specific limitations documented in the [support matrix](https://docs.donkey-kit.dev/frameworks).
 
@@ -71,7 +71,7 @@ DDK consumes platform capabilities; it does not replace policy enforcement or sh
 
 ## Get started
 
-> **Alpha, published on PyPI.** The latest release is [0.2.0](https://github.com/Donkey-Development-Kit/donkey-development-kit/releases/tag/v0.2.0). Requires Python 3.10 or newer.
+> **Alpha, published on PyPI.** See the [release notes](https://github.com/Donkey-Development-Kit/donkey-development-kit/releases/latest) for what's new. Requires Python 3.10 or newer.
 
 ```bash
 pip install "donkey-kit[llm,langgraph]"   # base + raw client + one framework
