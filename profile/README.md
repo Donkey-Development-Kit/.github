@@ -13,7 +13,7 @@
   <a href="https://pepy.tech/projects/donkey-kit">
     <img src="https://img.shields.io/pepy/dt/donkey-kit?label=downloads" alt="Total downloads">
   </a>
-  <a href="https://github.com/Donkey-Development-Kit/donkey-development-kit/blob/develop/LICENSE">
+  <a href="https://github.com/Donkey-Development-Kit/donkey-development-kit/blob/main/LICENSE">
     <img src="https://img.shields.io/pypi/l/donkey-kit?color=green" alt="License: Apache-2.0">
   </a>
   <a href="https://docs.donkey-kit.dev">
@@ -38,8 +38,8 @@
 </p>
 
 <p align="center">
-  An independent, community-maintained Python SDK for consuming <strong>Agent Fabric</strong> capabilities —
-  governed model access, governed tool access, and provisioning-as-code — from your own agent framework and IDE,
+  An independent, community-maintained Python SDK for consuming <strong>MuleSoft Agent Fabric</strong> capabilities:
+  governed model and MCP tool access, Exchange publishing, user identity, and approvals from your own agent framework and IDE,
   <em>without adopting Mule</em>.
 </p>
 
@@ -47,29 +47,39 @@
 
 ## What is DDK?
 
-DDK lets your AI application consume **Agent Fabric** governance from Python — **without deploying or running the Mule runtime**. It speaks the governance contract natively:
+DDK connects your Python AI application to **MuleSoft Agent Fabric** while you keep your own framework and IDE, **without deploying or running the Mule runtime**. The gateway enforces policy; DDK makes its decisions visible and actionable in your code.
 
-- 🚦 **Typed refusals** — governance decisions arrive as structured, catchable types, not opaque errors.
-- 💰 **Budgets** — enforce spend and usage limits before a call is made.
-- 🔭 **OpenTelemetry spans** — every governed call is traced end to end.
-- 🔗 **Correlation IDs** — follow a request across services and logs.
+With [**donkey-kit 0.2.0**](https://github.com/Donkey-Development-Kit/donkey-development-kit/releases/tag/v0.2.0), you can:
+
+- **Use governed models and MCP tools**: call models through the gateway, discover governed MCP servers in Exchange, and bind their tools to native framework objects.
+- **Publish from code and CI**: scan agents and MCP servers, publish them to Exchange, and verify live tools and agent cards against what you published.
+- **Carry user identity and pause for approval**: forward on-behalf-of user tokens, gate tools with human-in-the-loop approvals, and handle the gateway's CIBA step-up decisions as typed outcomes.
+- **Serve A2A agents**: make your agent callable through the official `a2a-sdk`, with local simulated ingress and CLI tooling to expose it behind a gateway.
+- **React to typed refusals and pace usage**: catch structured governance exceptions, register refusal handlers and custom policy types, and use gateway-reported budget windows to slow down before hitting a limit.
+- **Trace and test governance**: OpenTelemetry GenAI spans, correlation IDs, cost attribution, a local gateway simulator, and a pytest conformance plugin help you observe calls and test refusal paths before production.
+
+**Framework support is deliberately differentiated.** LangGraph and the OpenAI Agents SDK are conformance-tested adapters. Google ADK, Strands, Microsoft Agent Framework, Anthropic, CrewAI, and LlamaIndex provide native factories and `connection_kwargs()`, with framework-specific limitations documented in the [support matrix](https://docs.donkey-kit.dev/frameworks).
+
+DDK consumes platform capabilities; it does not replace policy enforcement or ship a provisioning control plane. See the [feature overview](https://docs.donkey-kit.dev/feature-overview) and [verification ledger](https://github.com/Donkey-Development-Kit/donkey-development-kit/blob/main/docs/verified-apis.md) for shipped features, evidence, and remaining verification-gated surfaces.
 
 ## Repositories
 
 | Repo | What it is |
 |------|------------|
-| [**donkey-development-kit**](https://github.com/Donkey-Development-Kit/donkey-development-kit) | The core Python SDK — governed model & tool access, provisioning-as-code, typed refusals, budgets, OTel spans, correlation IDs. |
+| [**donkey-development-kit**](https://github.com/Donkey-Development-Kit/donkey-development-kit) | The Python SDK and CLI: governed model and MCP tool access, Exchange publication, user identity, approvals, A2A serving, typed refusals, budget pacing, telemetry, and local testing. |
 | [**donkey-development-kit-demos**](https://github.com/Donkey-Development-Kit/donkey-development-kit-demos) | Runnable scenario and presentation demos, companion to the SDK. |
 
 ## Get started
 
-> **Alpha — published on PyPI.**
+> **Alpha, published on PyPI.** The latest release is [0.2.0](https://github.com/Donkey-Development-Kit/donkey-development-kit/releases/tag/v0.2.0). Requires Python 3.10 or newer.
 
 ```bash
 pip install "donkey-kit[llm,langgraph]"   # base + raw client + one framework
 ```
 
-Then head to the [SDK repo](https://github.com/Donkey-Development-Kit/donkey-development-kit) for usage and the [demos](https://github.com/Donkey-Development-Kit/donkey-development-kit-demos) to see it in action.
+Add `mcp` for governed tool binding, `a2a` for agent serving, or `cli,local` for command-line tooling and the simulator. The `all` extra includes these plus LangGraph and OpenTelemetry, not every framework; add your framework's extra separately.
+
+Start with the [quickstart](https://docs.donkey-kit.dev/quickstart), choose your [framework](https://docs.donkey-kit.dev/frameworks), and explore the [demos](https://github.com/Donkey-Development-Kit/donkey-development-kit-demos). Registry, discovery, and publication operations need an Anypoint connected app with the [appropriate scopes](https://github.com/Donkey-Development-Kit/donkey-development-kit/blob/main/docs/scopes.md).
 
 ---
 
